@@ -26,7 +26,8 @@ def count_sequences(line, player):
     if len(line) > 4:
         for i in range(len(line) - 3):
             if i + 4 <= len(line) and np.array_equal(line[i:i + 4], [player] * 4):
-                if (i != 0 and line[i - 1] == 0) or (i + 4 < len(line) and line[i + 4] == 0):
+                if ((i != 0 and line[i - 1] == 0 and (i + 4 >= len(line) or line[i + 4] == 0)) or
+                        ((i + 4 >= len(line) or line[i + 4] == 0) and (i == 0 or line[i - 1] == 0))):
                     count_4 += 1
             elif np.array_equal(line[i:i + 3], [player] * 3):
                 if i != 0 and line[i - 1] == 0 and i + 3 < len(line) and line[i + 3] == 0:
