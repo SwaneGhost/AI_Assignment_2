@@ -6,14 +6,14 @@ def alphabeta_max_h(current_game, _heuristic, depth=3):
     global h
     h = _heuristic
     # add code here
-    return maximin(current_game, -math.inf, math.inf, depth)
+    return maximin(current_game, depth, -math.inf, math.inf)
 
 
 def alphabeta_min_h(current_game, _heuristic, depth=3):
     global h
     h = _heuristic
     # add code here
-    return minimax(current_game, -math.inf, math.inf, depth)
+    return minimax(current_game, depth, -math.inf, math.inf)
 
 
 def maximin(current_game, depth, alpha, beta):
