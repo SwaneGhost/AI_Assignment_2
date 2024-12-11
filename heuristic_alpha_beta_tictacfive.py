@@ -13,7 +13,7 @@ def alphabeta_min_h(current_game, _heuristic, depth=3):
     global h
     h = _heuristic
     # add code here
-    return maximin(current_game, -math.inf, math.inf, depth)
+    return minimax(current_game, -math.inf, math.inf, depth)
 
 
 def maximin(current_game, depth, alpha, beta):
@@ -51,5 +51,4 @@ def minimax(current_game, depth, alpha, beta):
             beta = min(beta, v)
             if alpha >= beta:
                 break
-
     return v, best_move

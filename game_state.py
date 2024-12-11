@@ -92,14 +92,15 @@ class game_state:
                     and False otherwise
         """
         rows, cols = self.__grid.shape
-        if self.__used_cells == rows * cols:
-            self.__score = 0
-            return True
         if self.has_consecutive():
             self.__score = 1000 if self.__curr_player == 2 else -1000
             # prolong the game
             # self.__score -= self.__used_cells
             return True
+        if self.__used_cells == rows * cols:
+            self.__score = 0
+            return True
+
         return False
 
     def has_consecutive(self):

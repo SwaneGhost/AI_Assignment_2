@@ -19,7 +19,6 @@ def print_result(curr_state):
         print(f"\n\nPlayer {(curr_state.get_curr_player() % 2) + 1} is the winner!!")
 
 
-
 def play_tictacfive(player_1, player_2, init_state):
     players = {1: player_1, 2: player_2}
     curr_player = player_1
@@ -97,7 +96,7 @@ def play_with_advanced_heuristics():
 
 
 if __name__ == '__main__':
-     play_with_minimax()
+    # play_with_minimax()
     # play_with_alpha_beta()
-    # play_with_heuristics()
+     play_with_heuristics()
     # play_with_advanced_heuristics()
